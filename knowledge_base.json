@@ -3,6 +3,46 @@
     {
       "patrones": ["crear imponente", "como crear", "crear nuevo"],
       "respuesta": "Para crear un imponente, sigue estos pasos:<br><ol><li>Paso 1: Ingresar a <a href='https://caep.cronodemo.cl' target='_blank'>caep.cronodemo.cl</a></li><li>Paso 2: Ir al modulo Cliente</li><li>Paso 3: Clic en Identificación General</li><li>Paso 4: Ingresar el RUT del postulante</li></ol><br><video width='400' controls><source src='/static/videos/corto_ingreso.mp4' type='video/mp4'>Tu navegador no soporta la reproducción de video.</video>"
+    },
+    {
+      "patrones": ["requisitos imponente", "documentación requerida", "que necesito"],
+      "respuesta": "Los requisitos principales para ser imponente son:<br><ul><li>Ser funcionario público activo.</li><li>Tener una renta imponible igual o superior al sueldo mínimo legal.</li><li>Para funcionarios a contrata, se requiere al menos 1 año de antigüedad.</li><li>Edad mínima: 18 años / Edad máxima: 70 años.</li><li>Debe ahorrar mensualmente al menos el 1% del total haberes caja.</li></ul>"
+    },
+    {
+      "patrones": ["documentos necesarios", "papeles imponente", "formulario ingreso"],
+      "respuesta": "Documentos requeridos:<br><ul><li>Cédula de identidad vigente (ambos lados).</li><li>Última liquidación de sueldo.</li><li>Formulario de solicitud de incorporación firmado.</li><li>Solicitud de seguros (Deceso familiar y Muerte Accidental).</li><li>Certificado de Insolvencia (si aplica).</li></ul>"
+    },
+    {
+      "patrones": ["datos imponente", "información personal", "qué datos se ingresan"],
+      "respuesta": "Datos que se deben ingresar en la solicitud:<br><ul><li>Nombre completo y RUT.</li><li>Fecha de nacimiento.</li><li>Teléfono móvil y correo electrónico.</li><li>Dirección particular y comercial.</li><li>Datos laborales y financieros.</li></ul>"
+    },
+    {
+      "patrones": ["postulación imponente", "admisión", "cómo postular"],
+      "respuesta": "El proceso de postulación de imponentes incluye:<br><ul><li>Ingreso de postulaciones por ejecutivos.</li><li>Registro y validación por área de Operaciones.</li><li>Impresión de documentos y aceptación.</li><li>Envío de carta de bienvenida al correo del imponente.</li></ul>"
+    },
+    {
+      "patrones": ["beneficios imponente", "qué beneficios tiene", "servicios disponibles"],
+      "respuesta": "Al ser imponente de la CAEP, puedes acceder a:<br><ul><li>Préstamos personales.</li><li>Seguros de vida y asistencia.</li><li>Acceso a servicios financieros preferenciales.</li></ul>"
+    },
+    {
+      "patrones": ["consulta postulaciones", "seguimiento solicitud", "estado postulación"],
+      "respuesta": "Puedes consultar el estado de tu postulación accediendo al sistema con tu RUT y clave. Si tu solicitud está en proceso, puedes comunicarte con un ejecutivo para más detalles."
+    },
+    {
+      "patrones": ["firma electrónica", "cómo firmar", "firma habilitado"],
+      "respuesta": "Dependiendo de la institución, la firma puede ser manual o electrónica. En caso de firma electrónica, se realiza a través del portal de convenios de la empresa."
+    },
+    {
+      "patrones": ["ahorro mensual", "cuánto debo ahorrar", "descuento sueldo"],
+      "respuesta": "El imponente debe ahorrar mensualmente al menos el 1% del total de sus haberes caja. Este descuento se realiza de forma automática."
+    },
+    {
+      "patrones": ["cambio de datos", "modificar información", "actualizar datos"],
+      "respuesta": "Puedes modificar tus datos personales en el sistema, siempre y cuando tu postulación no haya sido finalizada. Para cambios después de la aprobación, debes contactar a un ejecutivo."
+    },
+    {
+      "patrones": ["cómo me puedes ayudar", "en qué me puedes apoyar", "temas que manejas"],
+      "respuesta": "Puedo ayudarte con los siguientes temas:<br><ul><li>Cómo crear un imponente y requisitos necesarios.</li><li>Documentación requerida para la incorporación.</li><li>Datos personales que debes ingresar en la solicitud.</li><li>Proceso de postulación y admisión de imponentes.</li><li>Beneficios y servicios disponibles para imponentes.</li><li>Consulta del estado de tu postulación.</li><li>Detalles sobre firma electrónica y validaciones.</li><li>Información sobre ahorro mensual y descuentos.</li><li>Modificación y actualización de datos personales.</li></ul>"
     }
   ]
 }
