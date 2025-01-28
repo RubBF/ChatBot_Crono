@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual Mejorado</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .chat-message {
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            max-width: 80%;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .user-message {
+            background-color: #bfdbfe;
+            margin-left: auto;
+        }
+        .bot-message {
+            background-color: #f3f4f6;
+            margin-right: auto;
+        }
+        .chat-container {
+            height: 70vh;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+        .message-text {
+            white-space: pre-line;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 h-screen">
+    <div class="container mx-auto max-w-4xl p-4 h-full">
+        <div class="bg-white rounded-lg shadow-lg p-4 h-full flex flex-col">
+            <div class="text-center mb-4">
+                <h1 class="text-3xl font-extrabold text-gray-800">Asistente Virtual Mejorado</h1>
+                <p class="text-gray-600">Pregúntame sobre creación de imponentes, requisitos y más</p>
+            </div>
+
+            <div id="chat-window" class="chat-container bg-gray-50 rounded-lg flex-grow mb-4">
+                <div class="chat-message bot-message">
+                    <p class="message-text">
+                        ¡Hola! Soy tu asistente virtual. Puedes preguntarme sobre:
+                        • Cómo crear un imponente
+                        • Qué requisitos necesitas
+                        • Dónde puedes realizar el trámite
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <input type="text" 
+                       id="user-input" 
+                       class="flex-grow p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all"
+                       placeholder="Escribe tu pregunta aquí...">
+                <button onclick="sendMessage()" 
+                        class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-indigo-600 hover:to-blue-500 transition-all">
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatWindow = document.getElementById('chat-window');
+        const userInput = document.getElementById('user-input');
+
+        function addMessage(message, isUser) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${isUser ? 'user-message' : 'bot-message'}`;
+
+    const messageContent = document.createElement('p');
+    messageContent.className = 'message-text';
+    
+    // Si el mensaje proviene del bot, interpretamos HTML
+    if (isUser) {
+        messageContent.textContent = message;
+    } else {
+        messageContent.innerHTML = message; // Permite que el HTML se renderice
+    }
+
+    messageDiv.appendChild(messageContent);
+    chatWindow.appendChild(messageDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+
+                Swal.fire({
+                    title: 'Enviando...',
+                    timer: 1000,
+                    showConfirmButton: false,
+                    willClose: () => {
+                        fetch('/get_response', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ message: message })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            addMessage(data.response, false);
+                        });
+                    }
+                });
+            }
+        }
+
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

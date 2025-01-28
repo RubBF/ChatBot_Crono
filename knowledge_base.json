@@ -1,0 +1,8 @@
+{
+  "preguntas": [
+    {
+      "patrones": ["crear imponente", "como crear", "crear nuevo"],
+      "respuesta": "Para crear un imponente, sigue estos pasos:<br><ol><li>Paso 1: Ingresar a <a href='https://caep.cronodemo.cl' target='_blank'>caep.cronodemo.cl</a></li><li>Paso 2: Ir al modulo Cliente</li><li>Paso 3: Clic en Identificación General</li><li>Paso 4: Ingresar el RUT del postulante</li></ol><br><video width='400' controls><source src='/static/videos/corto_ingreso.mp4' type='video/mp4'>Tu navegador no soporta la reproducción de video.</video>"
+    }
+  ]
+}
